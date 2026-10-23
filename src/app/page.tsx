@@ -3,7 +3,7 @@ import { FAQ } from '@/components/blocks/FAQ';
 import { FeatureGrid } from '@/components/blocks/FeatureGrid';
 import { Footer } from '@/components/blocks/Footer';
 import { Header } from '@/components/blocks/Header';
-import { Hero } from '@/components/blocks/Hero';
+import { FlightHero } from '@/components/FlightHero';
 import { MediaText } from '@/components/blocks/MediaText';
 import { Pricing } from '@/components/blocks/Pricing';
 import { Process } from '@/components/blocks/Process';
@@ -17,49 +17,7 @@ export default function Home() {
     <>
       <Header />
       <main className="overflow-x-clip">
-        <Hero
-          variant="sequence"
-          frames={{ dir: '/flight', count: 121 }}
-          length={7}
-          // стройка идёт до 62% прокрутки, потом готовая башня стоит, пока открываются выноски
-          keyframes={[
-            [0, 0.62],
-            [0, 120],
-          ]}
-          callouts={[
-            {
-              title: 'Crown terrace, level 31',
-              text: 'A residents’ club and garden under the spire, open to every home in the building.',
-              at: [0.5, 0.36],
-              atMobile: [0.5, 0.34],
-              side: 'right',
-              range: [0.66, 0.73],
-              hideAtMobile: 0.75,
-            },
-            {
-              title: 'Load-bearing limestone',
-              text: 'Each facade block is cut to size and laid by hand. No panels, no cladding.',
-              at: [0.46, 0.66],
-              atMobile: [0.47, 0.64],
-              side: 'left',
-              range: [0.75, 0.82],
-            },
-          ]}
-          eyebrow="Nine Elms, London SW8"
-          title={
-            <>
-              Raised
-              <br />
-              stone by stone
-            </>
-          }
-          lead="212 residences in a thirty-two storey limestone tower. Scroll to watch it rise."
-          actions={
-            <Button href="#contact" size="lg">
-              Register interest
-            </Button>
-          }
-        />
+        <FlightHero />
 
         <StackOverlap>
           <Container
@@ -157,7 +115,12 @@ export default function Home() {
               name: 'Two bedroom',
               price: 'from £1,450,000',
               text: 'Levels 6 to 24, most with a corner aspect.',
-              features: ['88 to 104 m²', 'Two bathrooms', 'Dual-aspect living room', 'Parking available'],
+              features: [
+                '88 to 104 m²',
+                'Two bathrooms',
+                'Dual-aspect living room',
+                'Parking available',
+              ],
               cta: { label: 'Request floor plans', href: '#contact' },
               featured: true,
             },
@@ -165,7 +128,12 @@ export default function Home() {
               name: 'Crown residences',
               price: 'from £4,200,000',
               text: 'Twelve homes on levels 28 to 31.',
-              features: ['180 to 310 m²', 'Private terrace', 'Private lift lobby', 'Two parking spaces'],
+              features: [
+                '180 to 310 m²',
+                'Private terrace',
+                'Private lift lobby',
+                'Two parking spaces',
+              ],
               cta: { label: 'Book a private viewing', href: '#contact' },
             },
           ]}
@@ -187,7 +155,9 @@ export default function Home() {
             The top tier is given to the building, not sold. It holds a residents’ club, a library
             with a fireplace and a planted terrace on all four sides.
           </p>
-          <p>Book it for dinner, or come up at 7 am when it is empty and the river is still grey.</p>
+          <p>
+            Book it for dinner, or come up at 7 am when it is empty and the river is still grey.
+          </p>
         </MediaText>
 
         <Process
